@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Single Activity App</string>
+    <string name="title_users">Пользователи</string>
+    <string name="title_about">О программе</string>
+    <string name="title_usercard">Карточка пользователя</string>
+</resources>
