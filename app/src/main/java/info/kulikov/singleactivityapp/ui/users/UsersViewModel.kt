@@ -67,49 +67,5 @@ class UsersViewModel: ViewModel() {
             )
     }
 
-
-        /*
-        ApiManager.loadOrganizationRepos()
-            //.doOnError { mView?.showMessage(it.toString()) }
-            .subscribe( Consumer { mView?.showOrganizations(it) },
-                GeneralErrorHandler(mView, true, { throwable, errorBody, isNetwork -> mView?.showError(throwable.message) })
-            )
-
-         */
-
-
 }
-
-
-/*
-class SomeViewModel(private val someUseCase: SomeUseCase) : ViewModel() {
-
-    private val loanListLiveData = MutableLiveData<List<Deposit>>()
-
-    fun onRefreshButtonClickedRx() {
-        someUseCase.execute()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe { depositList ->
-                //activity.runOnUiThread {
-                loanListLiveData.postValue(depositList)
-                //}
-            }
-    }
-
-    fun onRefreshButtonClicked() {
-        GlobalScope.launch {
-            withContext(Dispatchers.IO) {
-                val depositList = someUseCase.execute()
-            }
-            loanListLiveData.postValue(depositList)
-        }
-    }
-
-    //companion object {
-    //    lateinit var activity: Activity
-    //}
-
-}
-*/
 
