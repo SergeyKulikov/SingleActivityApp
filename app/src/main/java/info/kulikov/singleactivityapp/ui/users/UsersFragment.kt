@@ -50,7 +50,7 @@ class UsersFragment : Fragment() {
         })
         // забрали данные из сети
         // на уровне usersViewModel все запишется userListLiveData, а на него
-        // мы пописались выше
+        // мы подписались выше
         dataRepositoryLoading = usersViewModel.loadApiRepositories()
 
         usersViewModel.loadDatabaseRepositories()

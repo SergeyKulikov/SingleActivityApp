@@ -13,7 +13,7 @@ import io.reactivex.disposables.Disposable
 import java.util.*
 
 
-class UsersViewModel(var appDao: AppDao) : ViewModel() {
+class UsersViewModel: ViewModel() {
 
     private val _userListLiveData = MutableLiveData<List<User>>().apply {
         value = listOf();
@@ -21,6 +21,8 @@ class UsersViewModel(var appDao: AppDao) : ViewModel() {
     val userListLiveData: LiveData<List<User>> = _userListLiveData
 
     private val userList: ArrayList<User> = arrayListOf()
+
+    lateinit var appDao: AppDao
 
     fun loadApiRepositories(): Disposable {
         return ApiManager.loadUsersRepos()
