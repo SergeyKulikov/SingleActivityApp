@@ -1,9 +1,10 @@
 package info.kulikov.singleactivityapp
 
 import android.app.Application
+import androidx.multidex.MultiDexApplication
 import info.kulikov.singleactivityapp.database.AppRoomDatabase
 
-class App : Application() {
+class App : MultiDexApplication() {
    val database by lazy { AppRoomDatabase.getDatabase(this) }
    val dao by lazy { database.appDao() }
 

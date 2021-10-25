@@ -10,6 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 import java.security.SecureRandom
 import java.security.cert.X509Certificate
+import java.util.concurrent.TimeUnit
 import javax.net.ssl.*
 
 
@@ -30,7 +31,7 @@ object ApiManager {
         */
 
         val httpClientBuilder = OkHttpClient.Builder().apply {
-                ignoreAllSSLErrors()
+               ignoreAllSSLErrors()
         }.build()
 
         val gson = GsonBuilder()

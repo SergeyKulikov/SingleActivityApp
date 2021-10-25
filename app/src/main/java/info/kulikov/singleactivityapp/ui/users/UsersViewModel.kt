@@ -28,15 +28,24 @@ class UsersViewModel: ViewModel() {
         return ApiManager.loadUsersRepos()
             .subscribe(
                 { value ->
+
+                    /* отключил, т.е. не работает в API19
                     val list = arrayListOf(
                         *Gson().fromJson(
                             value.getAsJsonArray("data"),
                             Array<User>::class.java
                         )
                     )
+                    */
+
+                    val array = Gson().fromJson(
+                        value.getAsJsonArray("data"),
+                        Array<User>::class.java
+                    )
+
 
                     userList.clear()
-                    userList.addAll(list)
+                    userList.addAll(array)
 
                     // postValue - потому что не в основном потоке.
                     _userListLiveData.postValue(userList)
